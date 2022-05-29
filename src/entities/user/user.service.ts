@@ -18,7 +18,6 @@ export class UserService implements IUserService {
       name: createUserDto.name,
       password: createUserDto.password,
     });
-    console.log({ a: createdUser.raw.insertId });
     return createdUser.raw.insertId;
   }
 
