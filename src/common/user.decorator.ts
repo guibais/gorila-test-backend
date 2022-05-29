@@ -1,8 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { UserToken } from 'src/entities/user/entity/userToken';
 
-import { AppResponseDto } from '../shared/dto/app-response.dto';
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const jwt = require('jsonwebtoken');
 

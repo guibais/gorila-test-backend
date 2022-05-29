@@ -6,15 +6,12 @@ import {
   HttpStatus,
   Inject,
   Post,
-  UseGuards,
 } from '@nestjs/common';
 import { AppResponseDto } from 'src/shared/dto/app-response.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
-import { UserService } from './user.service';
 import { JwtService } from '@nestjs/jwt';
 import { AuthUser } from 'src/common/user.decorator';
-import { JwtAuthGuard } from 'src/common/jwt-auth.guard';
 
 import { UserToken } from './entity/userToken';
 import { Auth } from 'src/common/auth.decorator';

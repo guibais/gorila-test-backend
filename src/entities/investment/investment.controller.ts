@@ -15,7 +15,6 @@ import { Auth } from 'src/common/auth.decorator';
 import { AuthUser } from 'src/common/user.decorator';
 import { UserToken } from '../user/entity/userToken';
 import { EditUserInvestmentDto } from './dto/edit-investment.dto';
-import { DeleteUserInvestmentDto } from './dto/delete-investment.dto';
 import { IInvestmentService } from './investment.interface';
 import { InvestmentType } from './schema/investment.schema';
 
