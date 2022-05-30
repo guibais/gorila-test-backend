@@ -22,4 +22,8 @@ describe('UserController (e2e)', () => {
       .expect(401)
       .expect('{"statusCode":401,"message":"Unauthorized"}');
   });
+
+  afterAll(async () => {
+    await app.close();
+  });
 });

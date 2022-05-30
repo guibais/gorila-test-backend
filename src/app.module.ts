@@ -10,7 +10,10 @@ import { UserModule } from './entities/user/user.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(constants.dbConstants),
+    TypeOrmModule.forRoot({
+      ...constants.dbConstants,
+      entities: [join(__dirname, '**', '*.schema.{ts,js}')],
+    }),
     UserModule,
     InvestmentModule,
   ],
