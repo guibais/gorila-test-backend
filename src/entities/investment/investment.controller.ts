@@ -26,11 +26,13 @@ export class InvestmentController {
   ) {}
 
   @Post()
+  @Auth()
   async create(
+    @AuthUser() authUser: UserToken,
     @Body() createInvestmentDto: CreateInvestmentDto,
   ): Promise<AppResponseDto> {
     const user = new UserSchema();
-    user.id = 1;
+    user.id = authUser.data._id;
     const investment = await this.investmentService.create({
       ...createInvestmentDto,
       user,
