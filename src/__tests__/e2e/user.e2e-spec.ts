@@ -1,14 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { UserModule } from '../../entities/user/user.module';
+import { UserModule } from 'src/entities/user/user.module';
+import { AppModule } from 'src/app.module';
 
 describe('UserController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [UserModule],
+      imports: [AppModule, UserModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
@@ -17,8 +18,8 @@ describe('UserController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/users')
       .expect(401)
-      .expect('Unauthorized');
+      .expect('{"statusCode":401,"message":"Unauthorized"}');
   });
 });
