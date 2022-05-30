@@ -3,6 +3,7 @@
 </p>
 
   <p align="center">Aplicação desenvolvida para a empresa Gorila</p>
+  
 ## Description
 
 [Ver Repositório do Frontend](https://github.com/guibais/gorila-test-frontend).
